@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Pigeon is linked</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><h1>Pigeon</h1><p class="sub">Signed in</p></header>
+  <section>
+    <p>Your watch should now say <b>Linked</b>. You can close this page.</p>
+    <details id="manual">
+      <summary>The watch didn’t get it?</summary>
+      <p class="note">Copy this link code and paste it into Pigeon Lab’s settings in the Garmin Connect app (<b>Link code</b>), then choose <b>Use pasted code</b> on the watch. It only works on the watch that started linking.</p>
+      <textarea id="code" rows="7" readonly></textarea>
+      <button id="copy">Copy link code</button>
+      <p id="copied" class="note" hidden>Copied.</p>
+    </details>
+  </section>
+</main>
+<script src="done.js"></script>
+</body>
+</html>
