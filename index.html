@@ -23,6 +23,8 @@
     <input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+48 600 000 000">
     <button id="phone-go">Send code</button>
     <p class="note">Telegram sends a login code to your Telegram app.</p>
+    <button id="qr-go" class="secondary">Sign in with a QR code instead</button>
+    <p class="note">Scan it with Telegram on another phone or tablet. No code needed.</p>
   </section>
 
   <section data-step="code" hidden>
@@ -31,6 +33,17 @@
     <button id="code-go">Sign in</button>
     <p id="code-where" class="note"></p>
     <p class="note">Never share this code with anyone.</p>
+    <button id="resend" class="secondary" hidden>Send the code another way</button>
+    <p id="resend-note" class="note" hidden></p>
+    <button id="restart" class="secondary">Use another number or a QR code</button>
+  </section>
+
+  <section data-step="qr" hidden>
+    <label>Scan with Telegram on another device</label>
+    <img id="qr" class="qr" alt="QR code to sign in to Telegram">
+    <p class="note">On another phone or tablet signed in to Telegram, open <b>Settings › Devices › Link Desktop Device</b> and scan this code. It refreshes every 30 seconds.</p>
+    <p class="note">Only have this phone? <a id="qr-link" href="#">Try opening it in Telegram</a>. Telegram may refuse this for safety; scanning always works.</p>
+    <button id="qr-back" class="secondary">Back to phone number</button>
   </section>
 
   <section data-step="password" hidden>
