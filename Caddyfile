@@ -1,0 +1,4 @@
+{$BRIDGE_DOMAIN} {
+	encode gzip
+	reverse_proxy bridge:8080
+}

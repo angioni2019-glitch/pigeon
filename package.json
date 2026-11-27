@@ -1,0 +1,20 @@
+{
+  "name": "pigeon-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bridge between the Pigeon Garmin watch app and Telegram (via TDLib). Unofficial; uses the Telegram API.",
+  "main": "src/server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "demo": "DEMO=1 node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "prebuilt-tdlib": "^0.1008065.0",
+    "tdl": "^8.1.0"
+  }
+}

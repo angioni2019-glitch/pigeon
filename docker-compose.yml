@@ -1,0 +1,31 @@
+# Pigeon bridge + Caddy (automatic HTTPS via Let's Encrypt).
+# 1. Point a DNS name (e.g. tg.example.com) at this server.
+# 2. cp .env.example .env and fill it in.
+# 3. docker compose up -d
+services:
+  bridge:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - bridge-data:/data
+    expose:
+      - "8080"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - BRIDGE_DOMAIN=${BRIDGE_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on:
+      - bridge
+
+volumes:
+  bridge-data:
+  caddy-data:
